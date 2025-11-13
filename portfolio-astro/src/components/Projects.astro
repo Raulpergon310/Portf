@@ -1,0 +1,110 @@
+---
+const projects = [
+	{
+		title: 'WenoApp',
+		description: 'Sistema completo de gestión de empleados y control horario con sincronización en tiempo real',
+		tech: ['Flutter', 'Firebase', 'Riverpod'],
+		category: 'mobile',
+		year: '2024'
+	},
+	{
+		title: 'Gesnova',
+		description: 'Plataforma de gestión inmobiliaria con seguimiento de propiedades y contratos de alquiler',
+		tech: ['Flutter', 'Provider', 'SQLite'],
+		category: 'mobile',
+		year: '2023'
+	},
+	{
+		title: 'WenoGestion',
+		description: 'Dashboard empresarial con componentes DevExtreme para análisis de datos en tiempo real',
+		tech: ['Angular', 'DevExtreme', 'TypeScript'],
+		category: 'web',
+		year: '2024'
+	},
+	{
+		title: 'GesnovaAngular',
+		description: 'Interfaz web administrativa para sistema de gestión de propiedades inmobiliarias',
+		tech: ['Angular', 'RxJS', 'SCSS'],
+		category: 'web',
+		year: '2023'
+	},
+	{
+		title: 'API Gateway',
+		description: 'Sistema de autenticación y gestión de microservicios con JWT y rate limiting',
+		tech: ['Node.js', 'Express', 'MongoDB'],
+		category: 'backend',
+		year: '2023'
+	},
+	{
+		title: 'E-commerce Mobile',
+		description: 'App móvil de comercio electrónico con pasarela de pagos y gestión de inventario',
+		tech: ['Flutter', 'Firebase', 'Stripe'],
+		category: 'mobile',
+		year: '2022'
+	},
+];
+---
+
+<section id="proyectos" class="py-20 px-6">
+	<div class="container mx-auto max-w-6xl">
+		<div class="rounded-lg overflow-hidden" style="border: 1px solid var(--border-primary);">
+			<div class="border-b px-4 py-2 flex items-center gap-2" style="background-color: var(--bg-secondary); border-color: var(--border-primary);">
+				<span class="text-xs" style="color: var(--text-tertiary);">$ ls -la ~/projects/</span>
+			</div>
+			<div class="p-8" style="background-color: var(--bg-primary);">
+				<div class="grid md:grid-cols-2 gap-6">
+					{projects.map((project, index) => (
+						<div class="rounded-lg p-6 hover:border-cyan-400 transition-colors group" style="border: 1px solid var(--border-primary);">
+							<div class="flex items-start justify-between mb-4">
+								<div class="flex items-center gap-2">
+									<span class="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">├──</span>
+									<h3 class="text-lg font-semibold group-hover:bg-gradient-to-r group-hover:from-cyan-400 group-hover:to-blue-500 group-hover:bg-clip-text group-hover:text-transparent transition-all" style="color: var(--text-primary);">
+										{project.title}/
+									</h3>
+								</div>
+								<span class="text-xs px-2 py-1 rounded" style="color: var(--text-tertiary); background-color: var(--bg-secondary);">
+									{project.year}
+								</span>
+							</div>
+
+							<p class="text-sm mb-4 leading-relaxed" style="color: var(--text-secondary);">
+								{project.description}
+							</p>
+
+							<div class="flex flex-wrap gap-2 mb-4">
+								{project.tech.map((tech) => (
+									<span class="text-xs text-cyan-400 bg-cyan-400/10 px-2 py-1 rounded border border-cyan-400/20">
+										{tech}
+									</span>
+								))}
+							</div>
+
+							<div class="flex items-center gap-4 text-xs" style="color: var(--text-tertiary);">
+								<span class="flex items-center gap-1">
+									<span class="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">●</span>
+									{project.category}
+								</span>
+								<a href="#" class="hover:text-cyan-400 transition-colors flex items-center gap-1">
+									<span>></span> ver más
+								</a>
+							</div>
+						</div>
+					))}
+				</div>
+
+				<div class="mt-8 pt-6 border-t" style="border-color: var(--border-primary);">
+					<div class="flex gap-2 text-sm">
+						<span class="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">guest@portfolio:~$</span>
+						<span class="text-[#888]">git log --oneline</span>
+					</div>
+					<div class="mt-4 space-y-2 pl-6 text-xs text-[#666]">
+						<p><span class="text-cyan-400">8a3f2d1</span> Added new e-commerce features</p>
+						<p><span class="text-cyan-400">5c9e4b2</span> Updated API authentication system</p>
+						<p><span class="text-cyan-400">2d7a9f3</span> Improved mobile app performance</p>
+						<p class="text-[#888] mt-4">...y muchos más commits</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

@@ -1,0 +1,127 @@
+---
+const stats = [
+	{ label: 'Proyectos completados', value: '25+', icon: '📦' },
+	{ label: 'Apps en tienda', value: '8', icon: '📱' },
+	{ label: 'Clientes satisfechos', value: '15+', icon: '👥' },
+	{ label: 'Años de experiencia', value: '5+', icon: '⏱️' },
+	{ label: 'Líneas de código', value: '100k+', icon: '💻' },
+	{ label: 'Tazas de café', value: '∞', icon: '☕' },
+];
+
+const techStack = {
+	mobile: ['Flutter', 'Dart', 'Firebase', 'Provider/Riverpod', 'SQLite', 'REST APIs'],
+	web: ['Angular', 'TypeScript', 'HTML/CSS', 'RxJS', 'Bootstrap', 'DevExtreme'],
+	backend: ['Node.js', 'Express', 'MongoDB', 'PostgreSQL', 'JWT', 'REST'],
+	tools: ['Git', 'VS Code', 'Docker', 'Figma', 'Postman', 'Firebase Console'],
+};
+---
+
+<section id="stats" class="py-20 px-6">
+	<div class="container mx-auto max-w-6xl">
+		<!-- Stats Terminal -->
+		<div class="border rounded-lg overflow-hidden mb-12" style="border-color: var(--border-primary);">
+			<div class="border-b px-4 py-2 flex items-center gap-2" style="background-color: var(--bg-secondary); border-color: var(--border-primary);">
+				<span class="text-xs" style="color: var(--text-tertiary);">$ stats --summary</span>
+			</div>
+			<div class="p-8" style="background-color: var(--bg-tertiary);">
+				<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+					{stats.map((stat) => (
+						<div class="text-center">
+							<div class="text-3xl mb-2">{stat.icon}</div>
+							<div class="text-2xl md:text-3xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent mb-1">
+								{stat.value}
+							</div>
+							<div class="text-xs" style="color: var(--text-tertiary);">
+								{stat.label}
+							</div>
+						</div>
+					))}
+				</div>
+			</div>
+		</div>
+
+		<!-- Tech Stack Terminal -->
+		<div class="border rounded-lg overflow-hidden" style="border-color: var(--border-primary);">
+			<div class="border-b px-4 py-2 flex items-center gap-2" style="background-color: var(--bg-secondary); border-color: var(--border-primary);">
+				<span class="text-xs" style="color: var(--text-tertiary);">$ tech-stack --list</span>
+			</div>
+			<div class="p-8" style="background-color: var(--bg-tertiary);">
+				<div class="grid md:grid-cols-2 gap-8">
+					<!-- Mobile -->
+					<div>
+						<div class="flex gap-2 mb-4 text-sm">
+							<span class="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">></span>
+							<span style="color: var(--text-primary);">mobile_development/</span>
+						</div>
+						<div class="pl-6 space-y-2">
+							{techStack.mobile.map((tech) => (
+								<div class="text-sm flex items-center gap-2" style="color: var(--text-secondary);">
+									<span class="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">├──</span>
+									<span>{tech}</span>
+								</div>
+							))}
+						</div>
+					</div>
+
+					<!-- Web -->
+					<div>
+						<div class="flex gap-2 mb-4 text-sm">
+							<span class="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">></span>
+							<span class="text-white">web_development/</span>
+						</div>
+						<div class="pl-6 space-y-2">
+							{techStack.web.map((tech) => (
+								<div class="text-[#888] text-sm flex items-center gap-2">
+									<span class="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">├──</span>
+									<span>{tech}</span>
+								</div>
+							))}
+						</div>
+					</div>
+
+					<!-- Backend -->
+					<div>
+						<div class="flex gap-2 mb-4 text-sm">
+							<span class="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">></span>
+							<span class="text-white">backend/</span>
+						</div>
+						<div class="pl-6 space-y-2">
+							{techStack.backend.map((tech) => (
+								<div class="text-[#888] text-sm flex items-center gap-2">
+									<span class="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">├──</span>
+									<span>{tech}</span>
+								</div>
+							))}
+						</div>
+					</div>
+
+					<!-- Tools -->
+					<div>
+						<div class="flex gap-2 mb-4 text-sm">
+							<span class="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">></span>
+							<span class="text-white">tools/</span>
+						</div>
+						<div class="pl-6 space-y-2">
+							{techStack.tools.map((tech) => (
+								<div class="text-[#888] text-sm flex items-center gap-2">
+									<span class="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">├──</span>
+									<span>{tech}</span>
+								</div>
+							))}
+						</div>
+					</div>
+				</div>
+
+				<div class="mt-8 pt-6 border-t border-[#2a2a2a]">
+					<div class="flex gap-2 text-sm">
+						<span class="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">guest@portfolio:~$</span>
+						<span class="text-[#888]">echo "Siempre aprendiendo nuevas tecnologías..."</span>
+					</div>
+					<div class="mt-2 text-[#666] text-sm pl-6">
+						Siempre aprendiendo nuevas tecnologías...
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
