@@ -67,11 +67,11 @@ const techStack = {
 					<div>
 						<div class="flex gap-2 mb-4 text-sm">
 							<span class="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">></span>
-							<span class="text-white">web_development/</span>
+							<span style="color: var(--text-primary);">web_development/</span>
 						</div>
 						<div class="pl-6 space-y-2">
 							{techStack.web.map((tech) => (
-								<div class="text-[#888] text-sm flex items-center gap-2">
+								<div class="text-sm flex items-center gap-2" style="color: var(--text-secondary);">
 									<span class="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">├──</span>
 									<span>{tech}</span>
 								</div>
@@ -83,11 +83,11 @@ const techStack = {
 					<div>
 						<div class="flex gap-2 mb-4 text-sm">
 							<span class="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">></span>
-							<span class="text-white">backend/</span>
+							<span style="color: var(--text-primary);">backend/</span>
 						</div>
 						<div class="pl-6 space-y-2">
 							{techStack.backend.map((tech) => (
-								<div class="text-[#888] text-sm flex items-center gap-2">
+								<div class="text-sm flex items-center gap-2" style="color: var(--text-secondary);">
 									<span class="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">├──</span>
 									<span>{tech}</span>
 								</div>
@@ -99,11 +99,11 @@ const techStack = {
 					<div>
 						<div class="flex gap-2 mb-4 text-sm">
 							<span class="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">></span>
-							<span class="text-white">tools/</span>
+							<span style="color: var(--text-primary);">tools/</span>
 						</div>
 						<div class="pl-6 space-y-2">
 							{techStack.tools.map((tech) => (
-								<div class="text-[#888] text-sm flex items-center gap-2">
+								<div class="text-sm flex items-center gap-2" style="color: var(--text-secondary);">
 									<span class="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">├──</span>
 									<span>{tech}</span>
 								</div>
@@ -112,12 +112,12 @@ const techStack = {
 					</div>
 				</div>
 
-				<div class="mt-8 pt-6 border-t border-[#2a2a2a]">
+				<div class="mt-8 pt-6 border-t" style="border-color: var(--border-primary);">
 					<div class="flex gap-2 text-sm">
 						<span class="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">guest@portfolio:~$</span>
-						<span class="text-[#888]">echo "Siempre aprendiendo nuevas tecnologías..."</span>
+						<span style="color: var(--text-secondary);">echo "Siempre aprendiendo nuevas tecnologías..."</span>
 					</div>
-					<div class="mt-2 text-[#666] text-sm pl-6">
+					<div class="mt-2 text-sm pl-6" style="color: var(--text-tertiary);">
 						Siempre aprendiendo nuevas tecnologías...
 					</div>
 				</div>

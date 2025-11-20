@@ -1,11 +1,14 @@
 ---
 const projects = [
 	{
-		title: 'WenoApp',
+		title: 'WENO',
 		description: 'Sistema completo de gestión de empleados y control horario con sincronización en tiempo real',
 		tech: ['Flutter', 'Firebase', 'Riverpod'],
 		category: 'mobile',
-		year: '2024'
+		year: '2024',
+		expandable: true,
+		playStoreUrl: 'https://play.google.com/store/apps/details?id=com.weno.app',
+		appStoreUrl: 'https://apps.apple.com/app/weno'
 	},
 	{
 		title: 'Gesnova',
@@ -54,39 +57,70 @@ const projects = [
 			<div class="p-8" style="background-color: var(--bg-primary);">
 				<div class="grid md:grid-cols-2 gap-6">
 					{projects.map((project, index) => (
-						<div class="rounded-lg p-6 hover:border-cyan-400 transition-colors group" style="border: 1px solid var(--border-primary);">
-							<div class="flex items-start justify-between mb-4">
-								<div class="flex items-center gap-2">
-									<span class="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">├──</span>
-									<h3 class="text-lg font-semibold group-hover:bg-gradient-to-r group-hover:from-cyan-400 group-hover:to-blue-500 group-hover:bg-clip-text group-hover:text-transparent transition-all" style="color: var(--text-primary);">
-										{project.title}/
-									</h3>
-								</div>
-								<span class="text-xs px-2 py-1 rounded" style="color: var(--text-tertiary); background-color: var(--bg-secondary);">
-									{project.year}
-								</span>
-							</div>
-
-							<p class="text-sm mb-4 leading-relaxed" style="color: var(--text-secondary);">
-								{project.description}
-							</p>
-
-							<div class="flex flex-wrap gap-2 mb-4">
-								{project.tech.map((tech) => (
-									<span class="text-xs text-cyan-400 bg-cyan-400/10 px-2 py-1 rounded border border-cyan-400/20">
-										{tech}
+						<div
+							class="rounded-lg p-6 hover:border-cyan-400 transition-colors group relative overflow-hidden"
+							style="border: 1px solid var(--border-primary);"
+						>
+							<div class="relative z-10">
+								<div class="flex items-start justify-between mb-4">
+									<div class="flex items-center gap-2">
+										<span class="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">├──</span>
+										<h3 class="text-lg font-semibold group-hover:bg-gradient-to-r group-hover:from-cyan-400 group-hover:to-blue-500 group-hover:bg-clip-text group-hover:text-transparent transition-all" style="color: var(--text-primary);">
+											{project.title}/
+										</h3>
+									</div>
+									<span class="text-xs px-2 py-1 rounded" style="color: var(--text-tertiary); background-color: var(--bg-secondary);">
+										{project.year}
 									</span>
-								))}
-							</div>
+								</div>
 
-							<div class="flex items-center gap-4 text-xs" style="color: var(--text-tertiary);">
-								<span class="flex items-center gap-1">
-									<span class="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">●</span>
-									{project.category}
-								</span>
-								<a href="#" class="hover:text-cyan-400 transition-colors flex items-center gap-1">
-									<span>></span> ver más
-								</a>
+								<p class="text-sm mb-4 leading-relaxed" style="color: var(--text-secondary);">
+									{project.description}
+								</p>
+
+								<div class="flex flex-wrap gap-2 mb-4">
+									{project.tech.map((tech) => (
+										<span class="text-xs text-cyan-400 bg-cyan-400/10 px-2 py-1 rounded border border-cyan-400/20">
+											{tech}
+										</span>
+									))}
+								</div>
+
+								{project.expandable ? (
+									<div class="flex flex-wrap gap-3 mt-4">
+										<a
+											href={project.playStoreUrl}
+											target="_blank"
+											class="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-500 hover:to-blue-600 rounded-lg transition-all text-white text-xs font-medium"
+										>
+											<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+												<path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/>
+											</svg>
+											<span>Google Play</span>
+										</a>
+
+										<a
+											href={project.appStoreUrl}
+											target="_blank"
+											class="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-500 hover:to-blue-600 rounded-lg transition-all text-white text-xs font-medium"
+										>
+											<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+												<path d="M18.71,19.5C17.88,20.74 17,21.95 15.66,21.97C14.32,22 13.89,21.18 12.37,21.18C10.84,21.18 10.37,21.95 9.1,22C7.79,22.05 6.8,20.68 5.96,19.47C4.25,17 2.94,12.45 4.7,9.39C5.57,7.87 7.13,6.91 8.82,6.88C10.1,6.86 11.32,7.75 12.11,7.75C12.89,7.75 14.37,6.68 15.92,6.84C16.57,6.87 18.39,7.1 19.56,8.82C19.47,8.88 17.39,10.1 17.41,12.63C17.44,15.65 20.06,16.66 20.09,16.67C20.06,16.74 19.67,18.11 18.71,19.5M13,3.5C13.73,2.67 14.94,2.04 15.94,2C16.07,3.17 15.6,4.35 14.9,5.19C14.21,6.04 13.07,6.7 11.95,6.61C11.8,5.46 12.36,4.26 13,3.5Z"/>
+											</svg>
+											<span>App Store</span>
+										</a>
+									</div>
+								) : (
+									<div class="flex items-center gap-4 text-xs" style="color: var(--text-tertiary);">
+										<span class="flex items-center gap-1">
+											<span class="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">●</span>
+											{project.category}
+										</span>
+										<a href="#" class="hover:text-cyan-400 transition-colors flex items-center gap-1">
+											<span>></span> ver más
+										</a>
+									</div>
+								)}
 							</div>
 						</div>
 					))}
@@ -95,16 +129,17 @@ const projects = [
 				<div class="mt-8 pt-6 border-t" style="border-color: var(--border-primary);">
 					<div class="flex gap-2 text-sm">
 						<span class="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">guest@portfolio:~$</span>
-						<span class="text-[#888]">git log --oneline</span>
+						<span style="color: var(--text-secondary);">git log --oneline</span>
 					</div>
-					<div class="mt-4 space-y-2 pl-6 text-xs text-[#666]">
+					<div class="mt-4 space-y-2 pl-6 text-xs" style="color: var(--text-tertiary);">
 						<p><span class="text-cyan-400">8a3f2d1</span> Added new e-commerce features</p>
 						<p><span class="text-cyan-400">5c9e4b2</span> Updated API authentication system</p>
 						<p><span class="text-cyan-400">2d7a9f3</span> Improved mobile app performance</p>
-						<p class="text-[#888] mt-4">...y muchos más commits</p>
+						<p class="mt-4" style="color: var(--text-secondary);">...y muchos más commits</p>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </section>
+
